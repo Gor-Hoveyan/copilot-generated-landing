@@ -1,101 +1,319 @@
-import Image from "next/image";
+// pages/index.tsx
+import { NextPage } from "next";
+import Head from "next/head";
+import {
+  FaBolt,
+  FaChartBar,
+  FaShieldAlt,
+  FaUsers,
+  FaCoins,
+  FaLock,
+  FaPaperPlane,
+  FaEnvelope,
+  FaTwitter,
+  FaFacebook,
+} from "react-icons/fa";
 
-export default function Home() {
+const Home: NextPage = () => {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
+    <div>
+      <Head>
+        <title>CryptoLanding</title>
+        <meta name="description" content="Your gateway to the crypto world" />
+        <link rel="icon" href="/favicon.ico" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+          rel="stylesheet"
         />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+      </Head>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
+      {/* Header */}
+      <header className="bg-gradient-to-r from-gray-700 to-gray-900 text-white p-4 flex justify-between items-center animate-fadeIn shadow-md">
+        <div className="text-2xl font-bold">CryptoLanding</div>
+        <nav>
+          <ul className="flex space-x-4">
+            <li>
+              <a
+                href="#home"
+                className="hover:text-purple-400 transition-colors duration-300"
+              >
+                Home
+              </a>
+            </li>
+            <li>
+              <a
+                href="#about"
+                className="hover:text-purple-400 transition-colors duration-300"
+              >
+                About
+              </a>
+            </li>
+            <li>
+              <a
+                href="#why-choose-us"
+                className="hover:text-purple-400 transition-colors duration-300"
+              >
+                Why Us
+              </a>
+            </li>
+            <li>
+              <a
+                href="#features"
+                className="hover:text-purple-400 transition-colors duration-300"
+              >
+                Features
+              </a>
+            </li>
+            <li>
+              <a
+                href="#reviews"
+                className="hover:text-purple-400 transition-colors duration-300"
+              >
+                Reviews
+              </a>
+            </li>
+            <li>
+              <a
+                href="#faq"
+                className="hover:text-purple-400 transition-colors duration-300"
+              >
+                FAQ
+              </a>
+            </li>
+            <li>
+              <a
+                href="#contact"
+                className="hover:text-purple-400 transition-colors duration-300"
+              >
+                Contact
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <main>
+        {/* Home Section */}
+        <section
+          id="home"
+          className="h-screen flex flex-col justify-center items-center bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-white"
+        >
+          <h1 className="text-5xl mb-4 animate-fadeIn hover:text-gray-300">
+            Welcome to CryptoLanding
+          </h1>
+          <p className="text-xl animate-slideIn text-center max-w-2xl hover:text-gray-300">
+            Your gateway to the crypto world. Explore the latest trends, market
+            data, and expert analysis in the cryptocurrency market.
+          </p>
+          <FaCoins className="w-24 h-24 mt-6 animate-bounce hover:text-gray-300" />
           <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#about"
+            className="mt-8 px-6 py-3 bg-white text-gray-800 rounded-full shadow-lg hover:bg-gray-800 hover:text-white transition duration-300"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
+            Learn More
+          </a>
+        </section>
+
+        {/* About Section */}
+        <section
+          id="about"
+          className="h-screen flex flex-col justify-center items-center bg-gradient-to-r from-gray-100 to-white text-gray-800"
+        >
+          <h2 className="text-4xl mb-4 animate-fadeIn hover:text-purple-400">
+            About Us
+          </h2>
+          <p className="text-lg max-w-3xl text-center animate-slideIn hover:text-gray-600">
+            We are a team of crypto enthusiasts dedicated to bringing you the
+            latest and most reliable information about the cryptocurrency
+            market. Our mission is to educate and empower individuals to make
+            informed decisions in the world of digital assets.
+          </p>
+          <FaUsers className="w-24 h-24 mt-6 text-gray-800 hover:text-purple-400" />
+        </section>
+
+        {/* Why Us Section */}
+        <section
+          id="why-choose-us"
+          className="h-screen flex flex-col justify-center items-center bg-gradient-to-r from-gray-100 to-gray-200 text-gray-800"
+        >
+          <h2 className="text-4xl mb-4 animate-fadeIn hover:text-purple-400">
+            Why Choose Us
+          </h2>
+          <p className="text-lg max-w-3xl text-center animate-slideIn hover:text-gray-600">
+            We provide accurate, up-to-date information and analysis on the
+            latest trends in the cryptocurrency market. Our team of experts
+            ensures that you have all the tools and knowledge needed to navigate
+            the volatile crypto landscape.
+          </p>
+          <FaLock className="w-24 h-24 mt-6 text-gray-800 hover:text-purple-400" />
+        </section>
+
+        {/* Features Section */}
+        <section
+          id="features"
+          className="h-screen flex flex-col justify-center items-center bg-gradient-to-r from-white to-gray-100 text-gray-800"
+        >
+          <h2 className="text-4xl mb-4 animate-fadeIn hover:text-purple-400">
+            Features
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="p-4 bg-gray-50 shadow-md rounded animate-scaleIn flex flex-col items-center hover:bg-gray-100">
+              <FaBolt className="w-16 h-16 text-purple-400 mb-4 hover:text-purple-600" />
+              <p className="text-lg font-semibold">Real-time market data</p>
+              <p className="text-center">
+                Stay updated with the latest market data and trends in
+                real-time.
+              </p>
+            </div>
+            <div className="p-4 bg-gray-50 shadow-md rounded animate-scaleIn flex flex-col items-center hover:bg-gray-100">
+              <FaChartBar className="w-16 h-16 text-purple-400 mb-4 hover:text-purple-600" />
+              <p className="text-lg font-semibold">Expert analysis</p>
+              <p className="text-center">
+                Get insights and analysis from our team of crypto experts.
+              </p>
+            </div>
+            <div className="p-4 bg-gray-50 shadow-md rounded animate-scaleIn flex flex-col items-center hover:bg-gray-100">
+              <FaShieldAlt className="w-16 h-16 text-purple-400 mb-4 hover:text-purple-600" />
+              <p className="text-lg font-semibold">Secure transactions</p>
+              <p className="text-center">
+                Experience secure and reliable transactions with our platform.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Reviews Section */}
+        <section
+          id="reviews"
+          className="h-screen flex flex-col justify-center items-center bg-gradient-to-r from-gray-200 to-gray-300 text-gray-800"
+        >
+          <h2 className="text-4xl mb-4 animate-fadeIn hover:text-purple-400">
+            Reviews
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="p-4 bg-white shadow-md rounded animate-slideIn hover:bg-gray-200">
+              <p className="text-lg font-semibold">
+                "CryptoLanding is a game-changer for crypto enthusiasts!"
+              </p>
+              <p className="mt-2 text-right">- Alex</p>
+            </div>
+            <div className="p-4 bg-white shadow-md rounded animate-slideIn hover:bg-gray-200">
+              <p className="text-lg font-semibold">
+                "I love the real-time data and expert analysis."
+              </p>
+              <p className="mt-2 text-right">- Jordan</p>
+            </div>
+            <div className="p-4 bg-white shadow-md rounded animate-slideIn hover:bg-gray-200">
+              <p className="text-lg font-semibold">
+                "Secure transactions make me feel safe."
+              </p>
+              <p className="mt-2 text-right">- Taylor</p>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section
+          id="faq"
+          className="h-screen flex flex-col justify-center items-center bg-gradient-to-r from-white to-gray-100 text-gray-800"
+        >
+          <h2 className="text-4xl mb-4 animate-fadeIn hover:text-purple-400">
+            Frequently Asked Questions (FAQ)
+          </h2>
+          <div className="max-w-4xl space-y-4">
+            <div className="p-4 bg-gray-50 shadow-md rounded animate-slideIn hover:bg-gray-100">
+              <h3 className="text-lg font-semibold">What is cryptocurrency?</h3>
+              <p>
+                Cryptocurrency is a digital or virtual currency that uses
+                cryptography for security and operates independently of a
+                central authority.
+              </p>
+            </div>
+            <div className="p-4 bg-gray-50 shadow-md rounded animate-slideIn hover:bg-gray-100">
+              <h3 className="text-lg font-semibold">
+                How do I buy cryptocurrency?
+              </h3>
+              <p>
+                You can buy cryptocurrency through various exchanges and
+                platforms that allow you to trade fiat currency for digital
+                assets.
+              </p>
+            </div>
+            <div className="p-4 bg-gray-50 shadow-md rounded animate-slideIn hover:bg-gray-100">
+              <h3 className="text-lg font-semibold">Is cryptocurrency safe?</h3>
+              <p>
+                While cryptocurrency transactions are secure due to
+                cryptography, it is important to use reputable platforms and
+                take necessary precautions to protect your assets.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Contact Section */}
+        <section
+          id="contact"
+          className="h-screen flex flex-col justify-center items-center bg-gradient-to-r from-gray-200 to-gray-300 text-gray-800"
+        >
+          <h2 className="text-4xl mb-4 animate-fadeIn hover:text-purple-400">
+            Contact Us
+          </h2>
+          <form className="w-full max-w-lg p-8 bg-white shadow-md rounded animate-slideIn">
+            <div className="mb-4">
+              <label className="block text-gray-700">Name</label>
+              <input
+                type="text"
+                className="w-full px-3 py-2 border rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-400"
+              />
+            </div>
+            <div className="mb-4">
+              <label className="block text-gray-700">Email</label>
+              <input
+                type="email"
+                className="w-full px-3 py-2 border rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-400"
+              />
+            </div>
+            <div className="mb-4">
+              <label className="block text-gray-700">Message</label>
+              <textarea className="w-full px-3 py-2 border rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-400"></textarea>
+            </div>
+            <button
+              type="submit"
+              className="px-6 py-3 bg-purple-400 text-white rounded-full shadow-lg hover:bg-purple-500 transition duration-300 flex items-center justify-center gap-2"
+            >
+              <FaPaperPlane />
+              Send Message
+            </button>
+          </form>
+        </section>
+      </main>
+
+      {/* Footer */}
+      <footer className="bg-gradient-to-r from-gray-700 to-gray-900 text-white p-4 flex justify-between items-center animate-fadeIn">
+        <p>&copy; 2025 CryptoLanding. All rights reserved.</p>
+        <div className="flex space-x-4">
+          <a
+            href="mailto:info@cryptolanding.com"
+            className="hover:text-purple-400 transition-colors duration-300"
+          >
+            <FaEnvelope />
           </a>
           <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="https://twitter.com/cryptolanding"
+            className="hover:text-purple-400 transition-colors duration-300"
           >
-            Read our docs
+            <FaTwitter />
+          </a>
+          <a
+            href="https://facebook.com/cryptolanding"
+            className="hover:text-purple-400 transition-colors duration-300"
+          >
+            <FaFacebook />
           </a>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
       </footer>
     </div>
   );
-}
+};
+
+export default Home;
