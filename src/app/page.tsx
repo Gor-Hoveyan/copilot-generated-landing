@@ -1,4 +1,3 @@
-// pages/index.tsx
 import { NextPage } from "next";
 import Head from "next/head";
 import {
@@ -17,16 +16,6 @@ import {
 const Home: NextPage = () => {
   return (
     <div>
-      <Head>
-        <title>CryptoLanding</title>
-        <meta name="description" content="Your gateway to the crypto world" />
-        <link rel="icon" href="/favicon.ico" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
-          rel="stylesheet"
-        />
-      </Head>
-
       {/* Header */}
       <header className="bg-gradient-to-r from-gray-700 to-gray-900 text-white p-4 flex justify-between items-center animate-fadeIn shadow-md">
         <div className="text-2xl font-bold">CryptoLanding</div>
@@ -193,19 +182,20 @@ const Home: NextPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="p-4 bg-white shadow-md rounded animate-slideIn hover:bg-gray-200">
               <p className="text-lg font-semibold">
-                "CryptoLanding is a game-changer for crypto enthusiasts!"
+                &quot;CryptoLanding is a game-changer for crypto
+                enthusiasts!&quot;
               </p>
               <p className="mt-2 text-right">- Alex</p>
             </div>
             <div className="p-4 bg-white shadow-md rounded animate-slideIn hover:bg-gray-200">
               <p className="text-lg font-semibold">
-                "I love the real-time data and expert analysis."
+                &quot;I love the real-time data and expert analysis.&quot;
               </p>
               <p className="mt-2 text-right">- Jordan</p>
             </div>
             <div className="p-4 bg-white shadow-md rounded animate-slideIn hover:bg-gray-200">
               <p className="text-lg font-semibold">
-                "Secure transactions make me feel safe."
+                &quot;Secure transactions make me feel safe.&quot;
               </p>
               <p className="mt-2 text-right">- Taylor</p>
             </div>
